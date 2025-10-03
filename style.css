@@ -769,64 +769,35 @@ body {
         font-size: 16px;
     }
 
-    /* Mobile - Cambiar iconos por texto */
-    .item-left .sce .icon {
-        display: none;
-    }
-
+   /* Mobile - Cambiar iconos por texto */
+    .item-left .sce .icon,
     .item-left .loc .icon {
         display: none;
-    }
-
-    .item-left .sce .icon::before {
-        content: "Fecha y hora: ";
-        background: none;
-        border-radius: 0;
-        box-shadow: none;
-        color: #99181d;
-        font-weight: bold;
-        font-size: 14px;
-        width: auto;
-        height: auto;
-        display: inline;
-        margin-right: 5px;
-    }
-
-    .item-left .loc .icon::before {
-        content: "Interpretado por: ";
-        background: none;
-        border-radius: 0;
-        box-shadow: none;
-        color: #99181d;
-        font-weight: bold;
-        font-size: 14px;
-        width: auto;
-        height: auto;
-        display: inline;
-        margin-right: 5px;
     }
 
     /* Mostrar el texto en lugar del icono */
     .item-left .sce::before {
         content: "Fecha y hora: ";
-        font-weight: bold;
-        margin-bottom: 3px;
         color: #99181d;
         font-weight: 900;
         font-size: 14px;
         float: left;
         margin-right: 5px;
+        display: block;
+        width: 100%;
+        margin-bottom: 3px;
     }
 
     .item-left .loc::before {
         content: "Interpretado por: ";
-        margin-bottom: 3px;
         color: #99181d;
-        font-weight: bold;
+        font-weight: 900;
         font-size: 14px;
         float: left;
         margin-right: 5px;
-        font-weight: 900;
+        display: block;
+        width: 100%;
+        margin-bottom: 3px;
     }
 
     /* Arreglar solo el texto del título en la parte dorada */
