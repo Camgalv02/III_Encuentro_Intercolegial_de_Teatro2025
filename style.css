@@ -1,0 +1,904 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.hero-section {
+    min-height: 100vh;
+    background-image: url('img/fondo2.jpg');
+    position: relative;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    filter: blur(0.5px);
+}
+
+.main-title {
+    background: linear-gradient(135deg, #f5f5f5, #e8e8e8);
+    padding: 2rem 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+    border: 20px solid #8B0000;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: visible;
+}
+
+.main-title::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: 8px;
+    width: 10px;
+    height: 10px;
+    background: #ffd700;
+    border-radius: 50%;
+    box-shadow:
+        /* 10 luces superiores */
+        0 0 8px #ffd700,
+        42px 0 0 0 #ffd700, 42px 0 8px 0 #ffd700,
+        84px 0 0 0 #ffd700, 84px 0 8px 0 #ffd700,
+        126px 0 0 0 #ffd700, 126px 0 8px 0 #ffd700,
+        168px 0 0 0 #ffd700, 168px 0 8px 0 #ffd700,
+        210px 0 0 0 #ffd700, 210px 0 8px 0 #ffd700,
+        252px 0 0 0 #ffd700, 252px 0 8px 0 #ffd700,
+        294px 0 0 0 #ffd700, 294px 0 8px 0 #ffd700,
+        336px 0 0 0 #ffd700, 336px 0 8px 0 #ffd700,
+        378px 0 0 0 #ffd700, 378px 0 8px 0 #ffd700;
+    animation: bulb-glow 2s infinite alternate;
+    z-index: 10;
+}
+
+.main-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 8px;
+    width: 10px;
+    height: 10px;
+    background: #ffd700;
+    border-radius: 50%;
+    box-shadow:
+        /* 10 luces inferiores */
+        0 0 8px #ffd700,
+        42px 0 0 0 #ffd700, 42px 0 8px 0 #ffd700,
+        84px 0 0 0 #ffd700, 84px 0 8px 0 #ffd700,
+        126px 0 0 0 #ffd700, 126px 0 8px 0 #ffd700,
+        168px 0 0 0 #ffd700, 168px 0 8px 0 #ffd700,
+        210px 0 0 0 #ffd700, 210px 0 8px 0 #ffd700,
+        252px 0 0 0 #ffd700, 252px 0 8px 0 #ffd700,
+        294px 0 0 0 #ffd700, 294px 0 8px 0 #ffd700,
+        336px 0 0 0 #ffd700, 336px 0 8px 0 #ffd700,
+        378px 0 0 0 #ffd700, 378px 0 8px 0 #ffd700;
+    animation: bulb-glow 2s infinite alternate;
+    z-index: 10;
+}
+
+.main-title h1 {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-weight: bold;
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    line-height: 1.1;
+    position: relative;
+    z-index: 5;
+}
+
+@keyframes bulb-glow {
+    0% {
+        opacity: 0.7;
+        filter: brightness(0.8);
+    }
+
+    100% {
+        opacity: 1;
+        filter: brightness(1.2);
+    }
+}
+
+.side-lights-left {
+    position: absolute;
+    top: 0px;
+    left: -15px;
+    width: 10px;
+    height: 10px;
+    background: #ffd700;
+    border-radius: 50%;
+    box-shadow:
+        0 0 8px #ffd700,
+        0 30px 0 0 #ffd700, 0 30px 8px 0 #ffd700,
+        0 60px 0 0 #ffd700, 0 60px 8px 0 #ffd700,
+        0 90px 0 0 #ffd700, 0 90px 8px 0 #ffd700,
+        0 120px 0 0 #ffd700, 0 120px 8px 0 #ffd700,
+        0 150px 0 0 #ffd700, 0 150px 8px 0 #ffd700,
+        0 180px 0 0 #ffd700, 0 180px 8px 0 #ffd700,
+        0 210px 0 0 #ffd700, 0 210px 8px 0 #ffd700;
+    animation: bulb-glow 2s infinite alternate;
+    z-index: 10;
+}
+
+.side-lights-right {
+    position: absolute;
+    top: 0px;
+    right: -15px;
+    width: 10px;
+    height: 10px;
+    background: #ffd700;
+    border-radius: 50%;
+    box-shadow:
+        0 0 8px #ffd700,
+        0 30px 0 0 #ffd700, 0 30px 8px 0 #ffd700,
+        0 60px 0 0 #ffd700, 0 60px 8px 0 #ffd700,
+        0 90px 0 0 #ffd700, 0 90px 8px 0 #ffd700,
+        0 120px 0 0 #ffd700, 0 120px 8px 0 #ffd700,
+        0 150px 0 0 #ffd700, 0 150px 8px 0 #ffd700,
+        0 180px 0 0 #ffd700, 0 180px 8px 0 #ffd700,
+        0 210px 0 0 #ffd700, 0 210px 8px 0 #ffd700;
+    animation: bulb-glow 2s infinite alternate;
+    z-index: 10;
+}
+
+/* Responsive para mobile */
+@media (max-width: 768px) {
+    .main-title {
+        padding: 1.5rem 1rem;
+        max-width: 350px;
+        border: 10px solid #8B0000;
+    }
+
+    .main-title::before {
+        top: -10px;
+        left: 10px;
+        width: 8px;
+        height: 8px;
+        box-shadow:
+            /* 8 luces superiores más pequeñas */
+            0 0 6px #ffd700,
+            32px 0 0 0 #ffd700, 32px 0 6px 0 #ffd700,
+            64px 0 0 0 #ffd700, 64px 0 6px 0 #ffd700,
+            96px 0 0 0 #ffd700, 96px 0 6px 0 #ffd700,
+            128px 0 0 0 #ffd700, 128px 0 6px 0 #ffd700,
+            160px 0 0 0 #ffd700, 160px 0 6px 0 #ffd700,
+            192px 0 0 0 #ffd700, 192px 0 6px 0 #ffd700;
+    }
+
+    .main-title::after {
+        bottom: -8px;
+        left: 10px;
+        width: 8px;
+        height: 8px;
+        box-shadow:
+            /* 8 luces inferiores más pequeñas */
+            0 0 6px #ffd700,
+            32px 0 0 0 #ffd700, 32px 0 6px 0 #ffd700,
+            64px 0 0 0 #ffd700, 64px 0 6px 0 #ffd700,
+            96px 0 0 0 #ffd700, 96px 0 6px 0 #ffd700,
+            128px 0 0 0 #ffd700, 128px 0 6px 0 #ffd700,
+            160px 0 0 0 #ffd700, 160px 0 6px 0 #ffd700,
+            192px 0 0 0 #ffd700, 192px 0 6px 0 #ffd700;
+    }
+
+    .side-lights-left {
+        top: 10px;
+        left: -10px;
+        width: 8px;
+        height: 8px;
+        box-shadow:
+            /* 5 luces laterales izquierdas más pequeñas */
+            0 0 6px #ffd700,
+            0 25px 0 0 #ffd700, 0 25px 6px 0 #ffd700,
+            0 50px 0 0 #ffd700, 0 50px 6px 0 #ffd700,
+            0 75px 0 0 #ffd700, 0 75px 6px 0 #ffd700,
+            0 100px 0 0 #ffd700, 0 100px 6px 0 #ffd700;
+    }
+
+    .side-lights-right {
+        top: 10px;
+        right: -10px;
+        width: 8px;
+        height: 8px;
+        box-shadow:
+            /* 5 luces laterales derechas más pequeñas */
+            0 0 6px #ffd700,
+            0 25px 0 0 #ffd700, 0 25px 6px 0 #ffd700,
+            0 50px 0 0 #ffd700, 0 50px 6px 0 #ffd700,
+            0 75px 0 0 #ffd700, 0 75px 6px 0 #ffd700,
+            0 100px 0 0 #ffd700, 0 100px 6px 0 #ffd700;
+    }
+}
+
+.subtitle {
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    margin-bottom: 3rem;
+    text-align: center;
+    background: linear-gradient(45deg, #ffd700, #ffed4a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle2 {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    margin-bottom: 3rem;
+    text-align: center;
+    background: linear-gradient(45deg, #ffd700, #ffed4a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.countdown {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.countdown-item {
+    background: linear-gradient(145deg, #2d2d2d, #1a1a1a);
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    min-width: 100px;
+    border: 3px solid #ffd700;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.countdown-item:hover {
+    transform: translateY(-5px);
+}
+
+.countdown-number {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffd700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.countdown-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 0.5rem;
+}
+
+.schedule-section {
+    padding: 4rem 2rem;
+    background-image: url('img/ladrillo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    filter: blur(0.3px);
+}
+
+.location-section {
+    text-align: center;
+    padding: 3rem 2rem;
+
+    background-image: url('img/piso4.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    filter: blur(0.3px);
+}
+
+.location-icon {
+    font-size: 2rem;
+    color: #ffd700;
+    margin-bottom: 1rem;
+}
+
+.location-text {
+    font-size: 1.5rem;
+    color: #ffd700;
+    font-weight: bold;
+}
+
+.sponsor-logo {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sponsor-logo img {
+    max-width: 100px;
+    max-height: 60px;
+    object-fit: contain;
+}
+
+.school-info {
+    font-size: 0.9rem;
+    color: #666;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 1rem;
+    }
+
+    .countdown {
+        gap: 0.5rem;
+    }
+
+    .countdown-item {
+        padding: 0.8rem;
+        min-width: 70px;
+    }
+
+    .countdown-number {
+        font-size: 1.5rem;
+    }
+
+    .day-header {
+        font-size: 2rem;
+    }
+}
+
+/* Loader - Telón de Teatro */
+.theater-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #8B0000;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: transform 2s ease-in-out;
+}
+
+.theater-loader.hidden {
+    transform: translateY(-100%);
+}
+
+.curtain-left,
+.curtain-right {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(45deg, #8B0000, #DC143C);
+    transition: transform 2s ease-in-out;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.3);
+}
+
+.curtain-left {
+    left: 0;
+    background: linear-gradient(45deg, #8B0000, #DC143C);
+}
+
+.curtain-right {
+    right: 0;
+    background: linear-gradient(-45deg, #8B0000, #DC143C);
+}
+
+.theater-loader.opening .curtain-left {
+    transform: translateX(-100%);
+}
+
+.theater-loader.opening .curtain-right {
+    transform: translateX(100%);
+}
+
+.loader-content {
+    text-align: center;
+    z-index: 10000;
+    color: #ffd700;
+    animation: pulse 2s infinite;
+}
+
+.loader-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.stage-lights {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    height: 40px;
+}
+
+.stage-light {
+    position: absolute;
+    width: 60px;
+    height: 40px;
+    background: radial-gradient(ellipse, #ffd700, transparent);
+    animation: spotlight 3s infinite alternate;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+}
+
+@keyframes spotlight {
+    0% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.upcomming {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    border-left: 14px solid #ffd700;
+    padding-left: 12px;
+    margin: 18px 8px 40px 8px;
+    color: #fefefe;
+    font-family: 'Arial', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.day-section {
+    margin-bottom: 50px;
+}
+
+.day-header {
+    text-align: center;
+    color: #fefefe;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    font-family: 'Arial', sans-serif;
+    background-image: linear-gradient(45deg, #B8860B, #FFC300, #DAA520, #B8860B);
+    padding: 15px;
+    border-radius: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+    border: 2px solid #ffd700;
+}
+
+.item {
+    width: 100%;
+    background: white;
+    overflow: hidden;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+}
+
+.item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(255, 215, 0, 0.2);
+}
+
+.item-left {
+    width: 60%;
+    padding: 34px 20px 19px 46px;
+    border-left: 3px dotted #ddd;
+}
+
+.item-right {
+    padding: 79px 50px;
+    margin-right: 20px;
+    width: 25%;
+    position: relative;
+    background: linear-gradient(45deg, #99181d, #8C1007);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.obra-invitada .item-right {
+    background: linear-gradient(45deg, #ffd700, #ffb347);
+    color: #99181d ;
+    padding: 79px 50px;
+}
+
+.item-right .up-border,
+.item-right .down-border {
+    padding: 14px 15px;
+    background-color: #1a1a1a;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.item-right .up-border {
+    top: -13px;
+    right: -35px;
+}
+
+.item-right .down-border {
+    bottom: -13px;
+    right: -35px;
+}
+
+.item-right .num {
+    width: 40%;
+}
+
+.item-right .day,
+.item-left .event {
+    color: inherit;
+    font-size: 20px;
+    margin-bottom: 9px;
+}
+
+.item-right .day {
+    text-align: center;
+    font-size: 25px;
+}
+
+
+.item-left .event {
+    color: #8B0000;
+}
+
+.item-left .title {
+    color: #111;
+    font-size: 34px;
+    margin-bottom: 12px;
+    font-family: 'Lora', serif;
+}
+
+.item-left .sce {
+    margin-top: 5px;
+    display: block;
+}
+
+.item-left .sce .icon,
+.item-left .sce p,
+.item-left .loc .icon,
+.item-left .loc p {
+    float: left;
+    word-spacing: 5px;
+    letter-spacing: 1px;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.item-left .sce .icon,
+.item-left .loc .icon {
+    margin-right: 10px;
+    font-size: 20px;
+    color: #99181d;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(45deg, #99181d, #8C1007);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 2px 10px rgba(153, 24, 29, 0.3);
+}
+
+.item-left .loc {
+    display: block;
+}
+
+.fix {
+    clear: both;
+}
+
+.main-sponsor-logo {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-sponsor-logo img {
+    max-width: 350px;
+    max-height: 250px;
+    object-fit: contain;
+    margin-right: 60px;
+}
+
+/* Agregar estos estilos a tu CSS existente */
+
+/* Contenedor para las dos columnas */
+.day-cards-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+/* Estilos para desktop y tablet */
+@media (min-width: 769px) {
+    .day-cards-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    /* Ajustar el ancho de los items para que se vean mejor en columnas */
+    .day-cards-container .item {
+        width: 100%;
+        margin: 0;
+    }
+
+    /* Reducir un poco el padding para que quepa mejor */
+    .day-cards-container .item-right {
+        padding: 60px 30px;
+    }
+
+    .day-cards-container .item-left {
+        padding: 25px 15px 15px 35px;
+    }
+
+    /* Hacer el título un poco más pequeño para que quepa mejor */
+    .day-cards-container .item-left .title {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+}
+
+/* Para tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .day-cards-container .item-left .title {
+        font-size: 24px;
+    }
+
+    .day-cards-container .item-right {
+        padding: 50px 20px;
+    }
+
+    .day-cards-container .item-left {
+        padding: 20px 12px 12px 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .countdown {
+        gap: 1rem;
+    }
+
+    .countdown-item {
+        padding: 1rem;
+        min-width: 80px;
+    }
+
+    .countdown-number {
+        font-size: 2rem;
+    }
+
+    .main-title {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Para móviles mantener una sola columna */
+    .day-cards-container {
+        display: block;
+    }
+
+    .day-cards-container .item {
+        margin: 10px 0;
+    }
+
+    /* Mobile - Tickets verticales */
+    .item {
+        display: block;
+        flex-direction: column;
+    }
+
+    .item-right {
+        width: 100%;
+        padding: 20px;
+        margin-right: 0;
+        order: -1;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .item-left {
+        width: 100%;
+        padding: 20px 20px 20px 30px;
+        border-left: none;
+        border-top: 3px dotted #ddd;
+        border-radius: 0 0 10px 10px;
+    }
+
+    /* Ajustar los círculos decorativos para mobile */
+    .item-right .up-border,
+    .item-right .down-border {
+        display: none;
+    }
+
+    /* Ajustar tamaños de texto para mobile */
+    .item-left .title {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .item-right .day {
+        font-size: 18px;
+    }
+
+    .item-left .event {
+        font-size: 16px;
+    }
+
+    /* Mobile - Cambiar iconos por texto */
+    .item-left .sce .icon {
+        display: none;
+    }
+
+    .item-left .loc .icon {
+        display: none;
+    }
+
+    .item-left .sce .icon::before {
+        content: "Fecha y hora: ";
+        background: none;
+        border-radius: 0;
+        box-shadow: none;
+        color: #99181d;
+        font-weight: bold;
+        font-size: 14px;
+        width: auto;
+        height: auto;
+        display: inline;
+        margin-right: 5px;
+    }
+
+    .item-left .loc .icon::before {
+        content: "Interpretado por: ";
+        background: none;
+        border-radius: 0;
+        box-shadow: none;
+        color: #99181d;
+        font-weight: bold;
+        font-size: 14px;
+        width: auto;
+        height: auto;
+        display: inline;
+        margin-right: 5px;
+    }
+
+    /* Mostrar el texto en lugar del icono */
+    .item-left .sce::before {
+        content: "Fecha y hora: ";
+        font-weight: bold;
+        margin-bottom: 3px;
+        color: #99181d;
+        font-weight: 900;
+        font-size: 14px;
+        float: left;
+        margin-right: 5px;
+    }
+
+    .item-left .loc::before {
+        content: "Interpretado por: ";
+        margin-bottom: 3px;
+        color: #99181d;
+        font-weight: bold;
+        font-size: 14px;
+        float: left;
+        margin-right: 5px;
+        font-weight: 900;
+    }
+
+    /* Arreglar solo el texto del título en la parte dorada */
+    .obra-invitada .item-right .day {
+        color: #99181d !important;
+           font-size: 16px;
+        line-height: 1.2;
+    }
+
+    /* Ajustar altura de la card dorada en mobile para que sea igual */
+    .obra-invitada .item-right {
+        padding: 20px;
+        min-height: auto;
+    }
+
+    /* Ajustar tamaño de todas las imágenes en los círculos */
+    .item-right .num {
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+    }
+
+    /* Para mobile, hacer la imagen un poco más pequeña */
+    .item-right .num {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Hacer responsive la sección de logos */
+    .main-sponsor-logo {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 60px;
+    }
+
+    .sponsor-logo {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    /* Mobile - Logos en vertical */
+    .main-sponsor-logo {
+        flex-direction: column;
+        gap: 30px;
+        padding: 1.5rem;
+    }
+
+    .main-sponsor-logo img {
+        max-width: 250px;
+        max-height: 180px;
+        margin-right: 0;
+    }
+
+    .location-text {
+        text-align: center;
+        font-size: 1.2rem;
+        line-height: 1.4;
+    }
+
+    .sponsor-logo {
+        flex-direction: column;
+        gap: 15px;
+        padding: 1rem;
+    }
+
+    .sponsor-logo img {
+        max-width: 120px;
+        max-height: 80px;
+    }
+}
